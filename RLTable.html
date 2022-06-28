@@ -1,4 +1,4 @@
-/* Final project cs3200:
+<!-- /* Final project cs3200:
    Authors Authors: Tyson Hickey, 201507225 and Matthew Gilchrist, 200942688
 
    Combined with the html file this file use the q learning algorithm to
@@ -8,66 +8,35 @@
    
 
 
-*/
+*/ -->
 
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta charset="utf-8" />
-<title> Reinforcement Learning Table for Blackjack</title>
-<style>
-  table, tr, th, td {
-    font-family:'Times New Roman', Times, serif;
-    border: thick solid black;
-    padding: 7px;
-  }
-
-  aside {
-
-    float: left;
-    padding: 15px;
-    width: 200px;
-    border: thin solid black;
-
-
-  }
-  body {
-    background-color: lightgray;
-  }
-</style>
-
-<script defer src = "Blackjack.js"></script>
-
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>Oczko</title>
+  <script defer src = "Blackjack.js"></script>
 </head>
 
 <body>
-
-  <h1>Reinforcement Learning Table for Blackjack</h1>
-  <h4>Authors: Tyson Hickey, 201507225 and Matthew Gilchrist, 200942688</h4>
-
-
+  
   <aside>
-      <p>
-        <button id="update" type="button"onClick="QLearningStep()">Step</button>
-        <button type="button"onClick="QLearning()">Go</button>
-      </p>
-
-      <p>
-        <input type="number" id="alpha" name="alpha" value=0.1>Alpha<br>
-        <input type="number" id="epsilon" name="epsilon" value=0.1>Epsilon<br>
-        <input type="number" id="gamma" name="gamma" value=0.9>Gamma
-      </p>
-
-    </aside>
+    <input type="number" id="alpha" name="alpha" value=0.1>Alpha</br>
+    <input type="number" id="epsilon" name="epsilon" value=0.1>Epsilon</br>
+    <input type="number" id="gamma" name="gamma" value=0.9>Gamma</br>
+    <button id="update" type="button"onClick="QLearningStep()">Rozdanie</button>
+    <button type="button"onClick="QLearning()">Graj</button>
+  </aside>
 
   <table id="myTable">
-    <tr>
-      <th>Your Hand</th>
-      <th colspan="10"> Dealer's First Card </th>
+    <tr class="header">
+      <th>Ręka gracza</th>
+      <th colspan="10">Ręka delera</th>
     </tr>
    <tr>
-     <th>         </th>
+     <th></th>
      <th>2</th>
      <th>3</th>
      <th>4</th>
@@ -81,228 +50,225 @@
    </tr>
    <tr>
      <td>20</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>19</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>18</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>17</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>16</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>15</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>14</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>13</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>12</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>11</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>10</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>9</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>8</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>7</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>6</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>5</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
    <tr>
      <td>4</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
-     <td>blank</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
    </tr>
   </table>
-
-
-
 </body>
 </html>

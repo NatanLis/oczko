@@ -135,8 +135,7 @@ QLearningStep = function()
 
 }
 // begins hand
-StartBlackjack = function()
-{
+StartBlackjack = function(){
     deck = new Deck();
     player = [0, 0];
     dealer = [0, 0];
@@ -313,8 +312,8 @@ updatePolicy = function()
     {
         P[state[0]-4][state[1]-2][0] = 1;
         P[state[0]-4][state[1]-2][1] = 0;
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "HIT";
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "red";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "Dobierz";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "#fce0c3";
         myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.color = "white";
 
 
@@ -323,16 +322,16 @@ updatePolicy = function()
     {
         P[state[0]-4][state[1]-2][0] = 0;
         P[state[0]-4][state[1]-2][1] = 1;
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "STAND";
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "yellow";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "Stop";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "#dffcc3";
         myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.color = "black";
     }
     else
     {
         P[state[0]-4][state[1]-2][0] = 0.5;
         P[state[0]-4][state[1]-2][1] = 0.5;
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "H/S";
-        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "green";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].innerHTML = "?";
+        myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.backgroundColor = "#932ef5";
         myTable.rows[state[0]-4 + 2].cells[state[1]-2 + 1].style.color = "white";
     }
 }
