@@ -21,14 +21,17 @@
 </head>
 
 <body>
-  
-  <aside>
-    <input type="number" id="alpha" name="alpha" value=0.1>Alpha</br>
-    <input type="number" id="epsilon" name="epsilon" value=0.1>Epsilon</br>
-    <input type="number" id="gamma" name="gamma" value=0.9>Gamma</br>
-    <button id="update" type="button"onClick="QLearningStep()">Rozdanie</button>
-    <button type="button"onClick="QLearning()">Graj</button>
-  </aside>
+  <ul>
+    <li> <input type="number" id="alpha" name="alpha" value=0.1 pl>Alpha</li>
+    <li><input type="number" id="epsilon" name="epsilon" value=0.1>Epsilon</li>
+    <li><input type="number" id="gamma" name="gamma" value=0.9>Gamma</li>
+    <li>
+      <button id="update" type="button"onClick="QLearningStep()">Rozdanie</button>
+    </li>
+    <li>
+      <button type="button"onClick="QLearning()">Graj</button>
+    </li>
+  </ul>
 
   <table id="myTable">
     <tr class="header">
